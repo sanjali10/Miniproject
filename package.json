@@ -1,0 +1,32 @@
+{
+  "name": "miniproject",
+  "version": "1.0.0",
+  "description": "on:\"mini project for movies description\"",
+  "main": "\u001b[B\u001b[B\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[C\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[Dbackend/server.js)",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.7.12"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sanjali10/Miniproject.git"
+  },
+  "keywords": [
+    "[]\u001b[D\"\"\u001b[DExpress\"",
+    "\"RestAPI\"",
+    "\"MonogoDB\"",
+    "\"Mongoose\"",
+    "\"Movies\"]"
+  ],
+  "author": "anjali",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sanjali10/Miniproject/issues"
+  },
+  "homepage": "https://github.com/sanjali10/Miniproject#readme"
+}
