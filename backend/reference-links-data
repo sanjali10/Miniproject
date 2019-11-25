@@ -1,0 +1,5 @@
+// https://mongoosejs.com/docs/queries.html
+//https://stackoverflow.com/questions/49435883/syntax-for-chaining-mongoose-promises---------------(for checking duplicate enteries in records )
+
+
+// {"id":4,"name":"Priya","gender":"female","dob":"1999-10-23","bio":"hello. i have crosed 10+ movie in bollywood"}
