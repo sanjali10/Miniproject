@@ -1,14 +1,18 @@
 const mongoose = require('mongoose');
- const  actorMveRltnSchema = mongoose.Schema({
-     actorId:{
-         type:Number,
-         required: true
-     },
-     movieId:{
-        type:Number,
+const actorMveRltnSchema = mongoose.Schema({
+    id: {
+        type: Number,
         required: true
     },
+    actorId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'actorClctn'
+    },
+    movieId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'movieClctn'
+    },
 
- })
+})
 
- module.exports = mongoose.model('mveActrClctn',actorMveRltnSchema) 
+module.exports = mongoose.model('mveActrClctn', actorMveRltnSchema)

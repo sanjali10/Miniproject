@@ -9,4 +9,5 @@ res.json({
 });
 
 router.route('/getList').get(movieController.getList);
+router.route('/createMovie').post(movieController.createMovie);
 module.exports = router;

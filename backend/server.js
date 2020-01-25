@@ -42,6 +42,9 @@ app.use('/actr', actrApiRoutes);
 //Use Producer routes in the App
 let producerApiRoutes =  require('./routes/producer.routes');
 app.use('/prod', producerApiRoutes);
+// Use ActrMve for multiple rltns routes in the routes
+let actrMveApiRoutes =  require('./routes/actorMovie.routes');
+app.use('/actrMve',actrMveApiRoutes);
 // listen for requests
 app.listen(3000, () => {
     console.log("Server is listening on port 3000");
