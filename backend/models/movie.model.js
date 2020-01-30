@@ -4,7 +4,7 @@ const movieSchema = mongoose.Schema({
         type: Number,
         required: true
     },
-    Name: {
+    MovieName: {
         type: String,
         required: true
     },
@@ -19,7 +19,11 @@ const movieSchema = mongoose.Schema({
     ProdId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'producerClctn'
-    }
+    },
+    ActorId: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'actorClctn'
+    }]
 
 })
 

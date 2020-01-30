@@ -1,5 +1,4 @@
 const Node = require('../models/actor-movie.model');
-
 exports.createActrProd = (req, res) => {
     if (!req.body) {
         return res.status(400).send({
@@ -26,3 +25,4 @@ exports.createActrProd = (req, res) => {
         });
     });
 };
+

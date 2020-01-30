@@ -5,7 +5,7 @@ const actorSchema = mongoose.Schema({
         type: Number,
         required: true
     },
-    Name: {
+    ActrName: {
         type: String,
         required: true
     },
@@ -17,7 +17,8 @@ const actorSchema = mongoose.Schema({
     },
     Bio: {
         type: String
-    }
+    },
+
 })
 
 module.exports = mongoose.model('actorClctn', actorSchema);

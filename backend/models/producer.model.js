@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
          type:Number,
          required: true
      },
-     Name:{
+     ProducerName:{
          type:String,
          required:true
      }, 

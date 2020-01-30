@@ -34,7 +34,7 @@ exports.createProducer = (req, res) => {
                 MaximumId = id.id
             });
             prodNode["id"] = MaximumId + 1;
-            prodNode["Name"] = req.body.name,
+            prodNode["ProducerName"] = req.body.name,
             prodNode["Dob"] = req.body.dob,
             prodNode["Bio"] = req.body.bio
 

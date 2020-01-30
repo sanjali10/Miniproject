@@ -23,16 +23,18 @@ exports.createNode = (req, res) => {
     }
     var MaximumId = '';
     var actorNode = new Node();
-     Node.find({}).sort({
+    Node.find({}).sort({
         id: -1
     }).limit(1).select("id").then(ids => {
-        ids.forEach(id=>{MaximumId=id.id});
-            actorNode["id"] = MaximumId + 1,
-            actorNode["Name"] = req.body.name,
-            actorNode["Gender"] = req.body.gender,
-            actorNode["DOB"] = req.body.dob,
-            actorNode["Bio"] = req.body.bio
-       // saving record 
+        ids.forEach(id => {
+            MaximumId = id.id
+        });
+        actorNode["id"] = MaximumId + 1,
+        actorNode["ActrName"] = req.body.name,
+        actorNode["Gender"] = req.body.gender,
+        actorNode["DOB"] = req.body.dob,
+        actorNode["Bio"] = req.body.bio,
+            // saving record 
             actorNode.save()
             .then(data => {
                 res.send(data);
