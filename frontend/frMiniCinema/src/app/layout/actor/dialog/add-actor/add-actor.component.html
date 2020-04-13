@@ -1,0 +1,32 @@
+<mat-card>
+  <mat-card-title>Actor</mat-card-title>
+  <form [formGroup]="actorFormGroup" (submit)="saveDetails()">
+    <mat-card-content>
+      <div class="container" fxLayout fxLayoutGap="59px">
+        <mat-form-field fxFlex="15%">
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="actorName">
+        </mat-form-field>
+        <mat-radio-group formControlName="gender" fxLayout="column" fxFlex="15%"> Gender
+          <mat-radio-button value="m">Male</mat-radio-button>
+          <mat-radio-button value="f">Female</mat-radio-button>
+        </mat-radio-group>
+        <mat-form-field fxLayout="column" fxFlex="15%">
+          <mat-label>DOB</mat-label>
+          <input [matDatepicker]="myDatePicker" [max]="max" formControlName="dateOfBirth" matInput>
+          <mat-datepicker-toggle [for]="myDatePicker" matSuffix></mat-datepicker-toggle>
+          <mat-datepicker #myDatePicker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field fxLayout="column" fxFlex="15%">
+          <mat-label>Bio</mat-label>
+          <textarea matInput formControlName="bio"></textarea>
+        </mat-form-field>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <div fxLayout="column" fxFlex="15%">
+        <button type="submit">Submit</button>
+      </div>
+    </mat-card-actions>
+  </form>
+</mat-card>
