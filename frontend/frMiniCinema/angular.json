@@ -27,7 +27,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.css",
+              "dist/css/AdminLTE.min.css",
+              "css/layout.css"
             ],
             "scripts": []
           },
@@ -61,7 +64,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "frMiniCinema:build"
+            "browserTarget": "frMiniCinema:build",
+           //  "proxyConfig": "src/proxy.config.json"
           },
           "configurations": {
             "production": {

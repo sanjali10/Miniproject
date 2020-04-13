@@ -1,7 +1,11 @@
-<p>layout works!</p>
-
-<app-header></app-header>
-<app-sider></app-sider>
-<div>
-  <router-outlet></router-outlet>
-</div>
+<div class="hold-transition skin-blue sidebar-mini">
+  <div class="wrapper">
+       <app-sider></app-sider>
+       <app-header></app-header>
+  </div>
+  <div class="content-wrapper">
+          <section class="content">
+              <router-outlet></router-outlet>
+          </section>
+  </div>
+  </div>

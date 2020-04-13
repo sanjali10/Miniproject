@@ -1,0 +1,14 @@
+.container {
+  align-items: flex-end
+}
+.hide{
+  display:none;
+}
+mat-footer-row mat-footer-cell {
+  justify-content:center;
+  font-style:italic;
+}
+.addbtn{  position: absolute;
+  margin-top:10px;
+  margin-left:10px;
+}

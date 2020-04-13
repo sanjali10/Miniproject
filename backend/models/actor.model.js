@@ -13,7 +13,7 @@ const actorSchema = mongoose.Schema({
         type: String
     },
     DOB: {
-        type: Date
+        type: String
     },
     Bio: {
         type: String

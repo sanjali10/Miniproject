@@ -4,7 +4,9 @@
   "description": "on:\"mini project for movies description\"",
   "main": "\u001b[B\u001b[B\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[C\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[Dbackend/server.js)",
   "dependencies": {
+    "@angular/flex-layout": "^7.0.0-beta.19",
     "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "mongoose": "^5.7.12"
   },

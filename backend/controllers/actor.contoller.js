@@ -21,6 +21,7 @@ exports.createNode = (req, res) => {
             message: "Request body can't be empty"
         });
     }
+    console.log("req",req);
     var MaximumId = '';
     var actorNode = new Node();
     Node.find({}).sort({
