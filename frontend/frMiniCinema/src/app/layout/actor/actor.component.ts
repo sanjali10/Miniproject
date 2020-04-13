@@ -8,6 +8,7 @@ import {DataSource} from '@angular/cdk/collections';
 import { Observable } from 'rxjs';
 import {MatDialog} from '@angular/material';
 import {AddActorComponent} from './dialog/add-actor/add-actor.component';
+import {DeleteActorComponent} from './dialog/delete-actor/delete-actor.component';
 @Component({
   selector: 'app-actor',
   templateUrl: './actor.component.html',
@@ -62,7 +63,18 @@ export class ActorComponent implements OnInit {
     });
   }
 
+  deleteActor(id) {
+    const dialogRef = this.dialog.open(DeleteActorComponent,{
+      data:{id:id},
+      width: '500px'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.loadData();
+    });
+  }
 }
+
 
 export class ActorDataSource extends DataSource<any> {
   constructor(private actorService: ActorService) {

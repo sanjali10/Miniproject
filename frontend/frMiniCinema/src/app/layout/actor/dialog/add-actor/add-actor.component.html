@@ -25,7 +25,10 @@
     </mat-card-content>
     <mat-card-actions>
       <div fxLayout="column" fxFlex="15%">
-        <button type="submit">Submit</button>
+        <button type="submit" mat-raised-button>Submit</button>
+      </div>
+      <div fxFlex="15%" style="margin-left:40px;">
+        <button mat-raised-button (click)="closeBtn()">Close</button>
       </div>
     </mat-card-actions>
   </form>

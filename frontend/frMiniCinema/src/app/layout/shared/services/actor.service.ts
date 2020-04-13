@@ -20,11 +20,14 @@ export class ActorService {
         dob: actrData.dateOfBirth,
         bio: actrData.bio
     };
-   console.log(">>actorDta",this.actorData);
     return this.http.post<Actor>('http://localhost:3000/actr/createActor', this.actorData, httpOptions);
   }
 
   getActorDetails(): Observable <Actor[]> {
     return this.http.get<Actor[]>('http://localhost:3000/actr/getList');
+  }
+
+  deleteActorById(id:string):Observable<Actor[]> {
+      return this.http.delete<Actor[]>(`http://localhost:3000/actr/deleteActors/${id}`);
   }
 }

@@ -6,9 +6,10 @@ import {AppMaterialModule} from '../../material/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddActorComponent } from './dialog/add-actor/add-actor.component';
+import { DeleteActorComponent } from './dialog/delete-actor/delete-actor.component';
 @NgModule({
-  declarations: [ActorComponent, AddActorComponent],
-  entryComponents: [AddActorComponent],
+  declarations: [ActorComponent, AddActorComponent, DeleteActorComponent],
+  entryComponents: [AddActorComponent, DeleteActorComponent],
   imports: [
     CommonModule,
     ActorRoutingModule,

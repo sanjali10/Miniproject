@@ -21,7 +21,7 @@ exports.createNode = (req, res) => {
             message: "Request body can't be empty"
         });
     }
-    console.log("req",req);
+    console.log("req", req);
     var MaximumId = '';
     var actorNode = new Node();
     Node.find({}).sort({
@@ -31,10 +31,10 @@ exports.createNode = (req, res) => {
             MaximumId = id.id
         });
         actorNode["id"] = MaximumId + 1,
-        actorNode["ActrName"] = req.body.name,
-        actorNode["Gender"] = req.body.gender,
-        actorNode["DOB"] = req.body.dob,
-        actorNode["Bio"] = req.body.bio,
+            actorNode["ActrName"] = req.body.name,
+            actorNode["Gender"] = req.body.gender,
+            actorNode["DOB"] = req.body.dob,
+            actorNode["Bio"] = req.body.bio,
             // saving record 
             actorNode.save()
             .then(data => {
@@ -46,3 +46,19 @@ exports.createNode = (req, res) => {
             });
     });
 };
+
+exports.deleteActorById = (req, res) => {
+    if (!req.body) {
+        return res.status(400).send({
+            message: "Request body can't be empty"
+        });
+    }
+    const Ids = req.body.ids;
+        Node.findByIdAndRemove(req.params.id).then(() => {
+            res.send({msg:"deleted Successfully"});
+        }).catch(err => {
+            res.status(500).send({
+                message: err.message
+            });
+        });
+}
