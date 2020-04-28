@@ -30,4 +30,19 @@ export class ActorService {
   deleteActorById(id:string):Observable<Actor[]> {
       return this.http.delete<Actor[]>(`http://localhost:3000/actr/deleteActors/${id}`);
   }
+
+  updateActorById(id,actorData):Observable<Actor[]> {
+    console.log(">>actorData",actorData);
+    // this.actorData = {
+    //   name: actorData.actorName,
+    //   gender: actorData.gender,
+    //   dob: actorData.dateOfBirth,
+    //   bio: actorData.bio
+    // }
+    return this.http.put <Actor[]> (`http://localhost:3000/actr/updateActor/${id}`, actorData);
+  }
+
+  getRecordById(id:any){
+  return this.http.get<Actor[]>(`http://localhost:3000/actr//FindRecordById/${id}`);
+  }
 }

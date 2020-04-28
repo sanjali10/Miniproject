@@ -16,7 +16,7 @@ export class AddActorComponent implements OnInit {
   bio: string;
   dob: any;
   max = new Date();
-  result=[];
+  result = [];
   constructor(
     private fb: FormBuilder,
     private actorService: ActorService,
@@ -42,6 +42,10 @@ export class AddActorComponent implements OnInit {
     this.actorService.createActor(this.actorFormGroup.value).subscribe(res => {
       this.result.push(res);
     });
+    this.actorFormGroup.actorName.value = '';
+    this.actorFormGroup.dateOfBirth.value = '';
+    this.actorFormGroup.gender.value = '';
+    this.actorFormGroup.bio.value = '';
   }
 
   closeBtn() {

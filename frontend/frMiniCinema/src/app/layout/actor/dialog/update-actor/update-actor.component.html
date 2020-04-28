@@ -1,0 +1,33 @@
+<mat-card>
+  <mat-card-title>Update Actor</mat-card-title>
+  <form [formGroup]="actorFormGroup" name='actorFormGroup' (ngSubmit)="updateRecord()">
+  <mat-card-content>
+      <div class="container" fxLayout="row" fxLayoutGap ="40px">
+        <mat-form-field fxFlex="25%">
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="actorName">
+        </mat-form-field>
+
+        <mat-radio-group fxLayout="row" formControlName="gender" fxLayoutGap ="20px" fxFlex="30%">
+          <mat-radio-button fxFlex="30%" value="m" >Male</mat-radio-button>
+          <mat-radio-button fxFlex="50%" value="f">Female</mat-radio-button>
+        </mat-radio-group>
+
+        <mat-form-field fxLayout="row" fxFlex="25%">
+          <input matInput formControlName="dateOfBirth" [matDatepicker]="myDatepicker">
+          <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+          <mat-datepicker #myDatepicker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field fxLayout="row" fxFlex="25%">
+          <mat-label >Bio</mat-label>
+          <textarea formControlName="bio"  matInput></textarea>
+        </mat-form-field>
+      </div>
+   </mat-card-content>
+      <mat-card-actions>
+        <button type="submit" mat-raised-button>Update</button>
+        <button type="button" mat-raised-button (click)="closeBtn()">Close</button>
+      </mat-card-actions>
+</form>
+</mat-card>

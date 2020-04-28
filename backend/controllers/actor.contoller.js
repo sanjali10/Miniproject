@@ -12,6 +12,16 @@ exports.getList = (req, res) => {
         });
 };
 
+ exports.getFindRecordById =(req,res)=>{
+   let  _id = req.params.id;
+     Node.find({_id:{_id}}).then(data=>{
+        res.send(JSON.stringify(data));
+     }).catch(err => {
+        res.status(500).send({
+            message: err.message
+        });
+    });
+ }
 // create new node for actor and save into DB
 // we are first fetching the maximum id from the db and then creating the new record where id is ( MaximumId+1 ) 
 exports.createNode = (req, res) => {
@@ -61,4 +71,26 @@ exports.deleteActorById = (req, res) => {
                 message: err.message
             });
         });
+}
+
+exports.updateActorById = (req,res) => {
+   if(!req.body && req.params){
+       return res.status(400).send({
+           message:"Request body can't be empty"
+       });
+   }
+   const id = req.params.id;
+   console.log(">>>body",req.body)
+    // const actorNode ={};
+    // actorNode["ActrName"] = req.body.name;
+    // actorNode["Gender"] = req.body.gender;
+    // actorNode["DOB"] = req.body.dob;
+    // actorNode["Bio"] = req.body.bio;
+    Node.findByIdAndUpdate(id, {$set:req.body}).then(()=>{
+        res.send({msg:"Updated Successfully"});
+    }).catch(err => {
+        res.status(500).send({
+            message: err.message
+        });
+    });
 }

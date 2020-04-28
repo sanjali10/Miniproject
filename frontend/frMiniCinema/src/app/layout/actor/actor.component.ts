@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
 import {MatDialog} from '@angular/material';
 import {AddActorComponent} from './dialog/add-actor/add-actor.component';
 import {DeleteActorComponent} from './dialog/delete-actor/delete-actor.component';
+import {UpdateActorComponent} from './dialog/update-actor/update-actor.component';
 @Component({
   selector: 'app-actor',
   templateUrl: './actor.component.html',
@@ -73,8 +74,15 @@ export class ActorComponent implements OnInit {
       this.loadData();
     });
   }
-}
 
+  updateActor(id) {
+    const dialogRef = this.dialog.open(UpdateActorComponent,{
+      data:{id:id},
+      width: '1000px'
+    });
+  }
+
+}
 
 export class ActorDataSource extends DataSource<any> {
   constructor(private actorService: ActorService) {
